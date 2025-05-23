@@ -11,7 +11,7 @@ data:
   encoder_sample_rate: 16000
   encoder_hop_size: 160 # 160 for 'contentvec768l12tta2x', 320 for any others
   encoder_out_channels: 768 # 256 if using 'hubertsoft'
-  encoder_ckpt: pretrain/contentvec/checkpoint_best_legacy_500.pt
+  encoder_ckpt: resource/sing/models/pretrain/contentvec/checkpoint_best_legacy_500.pt
   train_path: data/train # Create a folder named "audio" under this path and put the audio clip in it
   valid_path: data/val # Create a folder named "audio" under this path and put the audio clip in it
   extensions: # List of extension included in the data collection
@@ -31,7 +31,7 @@ model:
 device: cuda # training device
 vocoder:
   type: 'nsf-hifigan'
-  ckpt: 'pretrain/nsf_hifigan/model'
+  ckpt: 'resource/sing/models/pretrain/nsf_hifigan/model'
 infer:
   infer_step: 50
   method: 'euler' # 'euler', 'rk4'
